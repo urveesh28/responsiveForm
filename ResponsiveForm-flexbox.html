@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="King">
+    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <title>Responsive-form flex-box</title>
+    <style>
+       *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: "Poppins" , sans-serif;
+        cursor:url("download1.jpg") , url("minions1.png") , url("sampleimg1.jpg"), url("wings-2053515_640.webp") ,auto;
+       }
+       
+       body{
+            margin:0;
+            padding:2em;
+            background:linear-gradient(to bottom right, cyan,navy,indigo,purple);
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size:cover;
+            
+        }
+
+        .parent-container{
+            margin:5em auto;
+            width:100%;
+            height:auto;
+            padding:1cm 0em;
+            /* border:1px solid red; */
+            display:flex;
+            justify-content:space-around;
+            align-items:space-around;
+            gap:1em;
+            flex-wrap:wrap;
+            flex-direction:row;
+            max-width:600px;
+        }
+
+        .child-box{
+            max-width:200px;
+            padding:3em;
+            text-align:center;
+            color:white;
+            text-transform:capitalize;
+            text-shadow:0px 0x 10px black;
+            border:1px solid black;
+            
+            font-size:2em;
+            font-style:italic;
+            font-family:"Arial" , sans-serif;
+            margin-left:0em;
+            background:linear-gradient(to right, cyan,blue);
+            transition: all 0.5s;
+        }
+
+        .child-box:hover{
+            background:linear-gradient(to bottom right,rgb(84, 97, 97), rgb(103, 103, 234),rgb(156, 87, 205),rgb(109, 128, 0));
+            padding:3.2em;
+        }
+
+        .form-section{
+            width:100%;
+            height:auto;
+            /* border-left-style:solid;
+            border-color:#f1f1f1;
+            border-width:20px; */
+            cursor:pointer;
+            
+        }
+
+        .form-container{
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            flex-direction:row;
+            flex-wrap:wrap;
+            background-color:transparent;
+            width:100%;
+            height:auto;
+        }
+
+        
+
+        .form-col1-img {
+            width: 40%;
+            height: auto;
+            padding: 2%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-col1-img img{
+            width:100%;
+            height:auto;
+            object-fit: cover;
+            /* filter:drop-shadow(0px 0px 20px red); */
+            perspective:1px;
+            position:relative;
+            animation-name: minions;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            transition: transform 0.5s;
+        }
+
+        .form-col1-img img:hover{
+            filter:drop-shadow(0px 0px 10px red);
+            filter:invert(100%);
+        }
+
+        /*@keyframes minions{
+            25% {filter:drop-shadow(0px 0px 20px red);
+                 transform:rotateZ(360deg); 
+                width:10%; 
+            }
+            50% {filter:drop-shadow(0px 0px 20px blue);}
+            75% {filter:drop-shadow(0px 0px 20px cyan);}
+            100% {filter:drop-shadow(0px 0px 20px yellow);
+                transform:rotateZ(720deg);
+                width:90%;
+            }
+        }*/
+        
+        
+
+
+        .form-header h2{
+            font-family: "Poppins";
+            color:white;
+            font-size:2vw;
+            font-weight:bold;
+            text-align:center;
+        }
+
+        .form-header span{
+            font-size:1.5vw;
+            color:white;
+            margin:0.5em 0 0;
+            text-align:center;
+            display:block;
+        }
+
+        
+
+        .form-col2{
+            /* border:1px solid red; */
+            width:60%;
+            background:url("");
+            box-sizing:border-box;
+            /* border:1px solid blue; */
+            
+        }
+
+
+        .form-col2 .form-details-container{
+            margin:1em 0 0;
+            backdrop-filter:blur(200px);
+            padding:2%;
+            background:transparent;
+            border-radius: 0%;
+            border:0px solid white;
+        }
+
+       .form-rows{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        width:100%;
+       } 
+
+       /* @media screen and (max-width:1150px){
+            .form-rows{
+                justify-content: center;
+                flex-direction:column;
+                background:;
+                align-items:;
+
+            }
+
+            .input-fields{
+                width:100%;
+                text-align:center;
+            }
+       } */
+
+        .form-rows>label , .form-footer label{
+            margin:1em 0em;
+            color:white;
+            font-family: "Poppins";
+            font-weight:bold;
+            text-align:center;
+            font-size:1.2vw;
+        }
+        
+        .input-fields{
+            font-size:1vw;
+            padding: 1.2%;
+            width:50%;
+            height:auto;
+            color:white;
+            font-family: "Poppins";
+            font-weight:900;
+            border-radius:50px;
+            transition:border 0.5s;
+            text-align:center;
+        }
+
+        input:focus{
+            background-color:black;
+            color:white;
+            outline:1px solid white;
+           
+        }
+
+        .form-footer{
+            width: 100%;
+            padding:1.5% 10%;
+        }
+
+        /* .form-footer label{
+            color:white;
+            font-size: 1vw;
+            font-weight:bold;
+            text-align:justify;
+        } */
+
+        .form-footer input[type="submit"]{
+            /* attribute selector */
+            background:transparent;
+            border:1px solid white;
+            outline:none;
+            width:100%;
+            text-align:center;
+            margin:1.8% 0;
+            border-radius:50px;
+            cursor:url("pic_bulboff.gif");
+        }
+        
+        /* .form-footer input[type="checkbox"]{
+            height:2%;
+        } */
+
+        @media screen and (max-width:1200px){
+            .form-container{
+                flex-direction:column;
+                padding:0;
+            }
+
+            .form-col1-img{
+                width:60%;
+            }
+
+            .form-col2{
+                padding:0;
+                width:70%;
+                
+            }
+
+            .input-fields{
+                font-size:1.4vw;
+                /* width:90%;
+                border-radius:10px; */
+            }
+
+            .form-rows > label , .form-footer label {
+                font-size:1.6vw;
+                
+            }
+
+            .form-header > h2{
+                font-size:2.8vw;
+            }
+
+            .form-header span{
+                font-size: 2vw;
+            }
+
+            /* .form-rows{
+                flex-direction: column;
+            } */
+        }
+
+        @media screen and (max-width:800px){
+            .input-fields{
+                font-size:2vw;
+                width:90%;
+                border-radius:10px;
+            }
+
+            .form-rows > label {
+                font-size:2.2vw;
+                
+            }
+
+            .form-header > h2{
+                font-size:3.5vw;
+            }
+
+            .form-header span{
+                font-size: 2.8vw;
+            }
+
+            .form-rows{
+                margin:0;
+                flex-direction: column;
+                justify-content: center;
+                width:100%;
+                padding:0 2%;
+            }
+
+            .form-footer label{
+                font-size:2vw;
+            }
+            
+            .form-col1-img{
+                width:40%;
+                height:auto;
+            }
+
+            .form-col2{
+                width:60%;
+                height:auto;
+            }
+
+            .form-footer input[type='checkbox']{
+                width:20px;
+                position:relative;
+                top:3px;
+            }
+
+            /* .form-footer input[type="submit"]{
+                text-align:center;
+                font-size:1.2vw;
+            } */
+
+        }
+
+        @media screen and (max-width:550px){
+            .input-fields{
+                font-size:2vw;
+                width:90%;
+                border-radius:10px;
+            }
+
+            .form-rows > label {
+                font-size:2.5vw;
+                margin:1%;
+            }
+
+            .form-footer input[type='checkbox']{
+                width:7px;
+                position:relative;
+                top:4px;
+            }
+        }
+
+       
+
+    
+
+
+        
+    </style>
+</head>
+
+<body>
+    
+    <!-- <div class="parent-container" >
+        <div class="child-box" contenteditable="true">1</div>
+        <div class="child-box" >2</div>
+        <div class="child-box" >3</div>
+        <div class="child-box" >4</div>
+    </div>
+
+   <div class="input-fields">
+        <input type="radio" name="gender" class="inputs">
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" class="input">
+        <label for="gender">Female</label>
+        <br>
+        <input type="text" name="fname" class="inputs" placeholder="Your name?" required>
+        <label for="fname">Name :</label>
+    </div> -->
+
+    <section class="form-section">
+        <div class="form-container">
+            
+            <div class="form-col1-img">
+                <img src="minions1.png" alt="img">
+            </div>
+
+            <div class="form-col2">
+                
+                <div class="form-header">
+                    <h2>Create an Account</h2>
+                    <span>Get in touch with us</span>
+                </div>
+                
+                <form action="#" method="post" >
+                    
+                   <div class="form-details-container"> 
+                    <div class="form-details">
+                        <div class="form-rows">
+                            <label >Full Name *</label>
+                            <input type="text" name="Fullname" class="input-fields" placeholder="Full Name" required>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="form-rows">
+                            <label>Email Address *</label>
+                            <input type="email" name="Email" class="input-fields" placeholder="example@gmail.com" required>
+                        </div>
+                    
+                        <br>
+                        
+                        <div class="form-rows">
+                            <label>Phone No. *</label>
+                            <input type="number" name="PhoneNo" class="input-fields" placeholder="+91 xxxxx xxxxx" required>
+                        </div>
+                    
+                        <br>
+
+                        <div class="form-rows">
+                            <label>Password *</label>
+                            <input type="password" name="Password" class="input-fields" placeholder="Password" required>
+                        </div>
+                    
+                        <br>
+                    </div>
+                    
+                    <!--form-footer-->
+                    <div class="form-footer">
+                        <input type="checkbox" name="agreement"  required>
+                        <label>I Agree All Statements in Terms of Service</label>
+                        <br>
+                        <input type="submit" value="Submit" class="input-fields">
+                    </div>
+                </div>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+</body>
+</html>
